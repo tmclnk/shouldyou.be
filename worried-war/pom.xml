@@ -9,12 +9,14 @@
     <artifactId>worried-war</artifactId>
 
     <properties>
-        <app.id>yshouldyoube-worried-1143</app.id>
+        <app.id>shouldyoube-worried-1143</app.id>
         <app.version>1</app.version>
         <appengine.version>1.9.28</appengine.version>
         <gcloud.plugin.version>2.0.9.74.v20150814</gcloud.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
     <prerequisites>
