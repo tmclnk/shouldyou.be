@@ -1,5 +1,7 @@
 # shouldyou.be
-A mashup for neurotic Omahans.
+A mashup for neurotic residents of Omaha, Nebraska, as seen through twitter.  
+
+(https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/00-screenshot.png)
 
 ## Setup Overview 
 This section should give you some idea of how to get started with a similar project on your own.  I can only speak from my own experience, this is not meant to be an authoritative guide.
@@ -21,13 +23,13 @@ Optionally:
 ### Creating Your Project
 In the [Google Developer's Console](https://console.developers.google.com), create a new project.
 
-[create new project](docs/images/01)
+(https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/01-create-google-project.png)
 
 
 Take note of the project ID (later referenced as "app id" in some of the documentation - I will use the terms interchangeably.
 
 
-[create new project](docs/images/02)
+(https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/02-projectid.png)
 
 On your local machine, create a new project, using this Maven Archetype
 
