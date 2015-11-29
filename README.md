@@ -15,8 +15,8 @@ What you will need:
 1. Maven > 3.2
 
 Optionally:
-4. Eclipse
-5. A domain name (with SSL Certificates)
+1. Eclipse
+1. A domain name (with SSL Certificates)
 
 ### Creating Your Project
 In the [Google Developer's Console](https://console.developers.google.com), create a new project.
