@@ -75,13 +75,9 @@ Optionally:
 ### Creating Your Project
 In the [Google Developer's Console](https://console.developers.google.com), create a new project.
 
-![creating google project](https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/01-create-google-project.png)
-
 
 Take note of the project ID (later referenced as "app id" in some of the documentation - I will use the terms interchangeably.
 
-
-![note project id](https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/02-projectid.png)
 
 On your local machine, create a new project, using this Maven Archetype
 
