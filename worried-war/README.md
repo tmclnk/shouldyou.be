@@ -24,6 +24,8 @@ In the [Google Developer's Console](https://console.developers.google.com), crea
 
 
 Take note of the project ID (later referenced as "app id" in some of the documentation - I will use the terms interchangeably.
+
+
 [create new project](docs/images/02)
 
 On your local machine, create a new project, using this Maven Archetype
@@ -43,4 +45,26 @@ Choose archetype:
 Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): : 2
 ```
 
-Our project will have a server component and a client component.  By convention, I choose to name my server component with a "-war" suffix, e.g. "worried-war."  
+Our project will have a server component (the part hosted on GAE) and a client component.  By convention, I choose to name my server component with a "-war" suffix, e.g. "worried-war."  The client, then, will be "worried-jar," and will be an executable jar.
+
+*At this point I made series of changes to the pom.xml.   These aren't really functional changes, they are just to take advantage of newer Maven features, which are a bit less verbose (using the [Maven Compiler Plugin](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) to specify versions has always bugged me, and specifying the `maven.compiler.source` and `maven.compiler.target` seems to work fine).*
+
+### Obtaining API Keys
+#### Client Keys for Google Cloud Endpoints
+[Client Keys](https://cloud.google.com/appengine/docs/java/endpoints/auth) need to generated for the client.  This will be for a service account, as it is not representative of any particular user, it is just a separate part of the architecture which is necessary only because user threads are not premitted in Google App Engine, and the Twitter Streaming API necessarily must spawn a thread.
+
+[Create a Service Account](11)
+
+Note that because the client whitelist is specified at compile time, any changes will require the application to be recompiled.  Also, we take special care to not expose the client's secret in any public repository, e.g. on Github.
+
+
+
+>Open the Credentials page for your project, and select Web application as the application type.
+>If you are testing the backend locally, specify http://localhost:8080 in the textbox labeled Authorized JavaScript origins. If you are deploying your backend API to production App Engine, specify the App Engine URL of your backend API in the textbox labeled Authorized JavaScript origins; for example, https://your_project_id.appspot.com, replacing your_project_id with your actual App Engine project ID.
+
+
+
+#### Google Cloud Datastore
+Don't confuse this with Google Cloud Storage!
+
+

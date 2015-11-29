@@ -4,7 +4,7 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
-            <param-value>be.shouldyou.YourFirstAPI</param-value>
+            <param-value>be.shouldyou.IncidentService</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
