@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>be.shouldyou</groupId>
+	<artifactId>site</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>shouldyou.be Google App Engine Mashups</name>
+	<modules>
+		<module>worried-war</module>
+	</modules>
+	<build>
+		<defaultGoal>clean install</defaultGoal>
+	</build>
+	<properties>
+		<appengine.version>1.9.28</appengine.version>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<gcloud.plugin.version>2.0.9.74.v20150814</gcloud.plugin.version>
+		<google-api-client.version>1.20.0</google-api-client.version>
+		<gson.version>2.3</gson.version>
+		<hbc-twitter4j.version>2.2.0</hbc-twitter4j.version>
+		<maven-war-plugin.version>2.6</maven-war-plugin.version>
+		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<objectify.version>5.0.3</objectify.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<servlet-api.version>2.5</servlet-api.version>
+		<slf4j-jdk14.version>1.7.7</slf4j-jdk14.version>
+	</properties>
+
+	<dependencies>
+		<!-- Compile/runtime dependencies -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>${slf4j-jdk14.version}</version>
+		</dependency>
+
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

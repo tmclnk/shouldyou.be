@@ -49,22 +49,8 @@ Our project will have a server component (the part hosted on GAE) and a client c
 
 *At this point I made series of changes to the pom.xml.   These aren't really functional changes, they are just to take advantage of newer Maven features, which are a bit less verbose (using the [Maven Compiler Plugin](https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html) to specify versions has always bugged me, and specifying the `maven.compiler.source` and `maven.compiler.target` seems to work fine).*
 
-### Obtaining API Keys
-#### Client Keys for Google Cloud Endpoints
-[Client Keys](https://cloud.google.com/appengine/docs/java/endpoints/auth) need to generated for the client.  This will be for a service account, as it is not representative of any particular user, it is just a separate part of the architecture which is necessary only because user threads are not premitted in Google App Engine, and the Twitter Streaming API necessarily must spawn a thread.
+####  Configure API Keys
+Follow the instructions in keys.properties for obtaining API keys.
 
-[Create a Service Account](11)
-
-Note that because the client whitelist is specified at compile time, any changes will require the application to be recompiled.  Also, we take special care to not expose the client's secret in any public repository, e.g. on Github.
-
-
-
->Open the Credentials page for your project, and select Web application as the application type.
->If you are testing the backend locally, specify http://localhost:8080 in the textbox labeled Authorized JavaScript origins. If you are deploying your backend API to production App Engine, specify the App Engine URL of your backend API in the textbox labeled Authorized JavaScript origins; for example, https://your_project_id.appspot.com, replacing your_project_id with your actual App Engine project ID.
-
-
-
-#### Google Cloud Datastore
-Don't confuse this with Google Cloud Storage!
-
+#### Client
 

@@ -6,28 +6,18 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 
-	<groupId>be.shouldyou</groupId>
 	<artifactId>worried-war</artifactId>
+
+	<parent>
+		<groupId>be.shouldyou</groupId>
+		<artifactId>site</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 
 	<properties>
 		<app.id>shouldyoube-worried-1143</app.id>
 		<app.version>1</app.version>
-		<appengine.version>1.9.28</appengine.version>
-		<gcloud.plugin.version>2.0.9.74.v20150814</gcloud.plugin.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-		<servlet-api.version>2.5</servlet-api.version>
-		<hbc-twitter4j.version>2.2.0</hbc-twitter4j.version>
-		<slf4j-jdk14.version>1.7.7</slf4j-jdk14.version>
-		<commons-lang3.version>3.3.2</commons-lang3.version>
-		<google-api-client.version>1.20.0</google-api-client.version>
 	</properties>
-
-	<prerequisites>
-		<maven>3.1.0</maven>
-	</prerequisites>
 
 	<dependencies>
 		<!-- Compile/runtime dependencies -->
@@ -58,11 +48,7 @@
 			<artifactId>hbc-twitter4j</artifactId>
 			<version>${hbc-twitter4j.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-jdk14</artifactId>
-			<version>${slf4j-jdk14.version}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -71,12 +57,12 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>2.3</version>
+			<version>${gson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.googlecode.objectify</groupId>
 			<artifactId>objectify</artifactId>
-			<version>5.0.3</version>
+			<version>${objectify.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.api-client</groupId>
@@ -85,12 +71,7 @@
 		</dependency>
 
 		<!-- Test Dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
@@ -117,7 +98,7 @@
 		</filters>
 		<!-- for hot reload of the web application -->
 		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
-		<defaultGoal>appengine:devserver</defaultGoal>
+		<!-- <defaultGoal>appengine:devserver</defaultGoal> -->
 		<plugins>
 			<!-- <plugin> -->
 			<!-- <groupId>org.codehaus.mojo</groupId> -->
@@ -136,7 +117,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
+				<version>${maven-war-plugin.version}</version>
 				<configuration>
 					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
 					<webXml>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF/web.xml</webXml>
@@ -162,8 +143,8 @@
 							<filtering>true</filtering>
 						</resource>
 					</webResources>
-					
-					
+
+
 				</configuration>
 			</plugin>
 			<plugin>
