@@ -1,5 +1,56 @@
-# shouldyou.be
-A mashup for neurotic residents of Omaha, Nebraska, as seen through twitter.  
+# shouldyou.be/worried
+
+https://shouldyou.be/worried/ ?
+
+A mashup for neurotic residents of Omaha, Nebraska, as seen through 
+twitter and a bunch of geographic APIs and regular expressions.
+
+If you've ever wondered why there are lights and sirens screaming
+through the neighborhood or why the "ghetto copter" is hovering above,
+then you'll understand the motivation behind this mashup.  Thanks to
+some folks who live tweet the police and fire dispatch radios during
+the hours when mayhem typically ensues in my local area, you can quickly-ish
+and easily-ish get a sense for where the action is.
+
+This app takes advantage of the twitter streaming API, uses sausage-fingered
+algorithm to extract guesses at the addresses being referenced, looks up
+the appropriate map coordinates, and pushes the map coordinates to your
+browser, which will then pan the map to the last event to occur.  Even on
+mobile devices, it typically takes less than a second for this to happen
+from the time the tweet is published.  In real terms, this obviously depends
+on when events get tweeted, but it has not been uncommon for the map
+to be updated long before the authorities arrive.
+
+I've intentionally avoided capturing any end-user information, and the record
+of which incidents you've clicked is tracked only in the browser's Web Storage.
+
+Demonstrates usage of the following APIs, platforms, etc.
+* Java 1.7
+* Google App Engine
+* Google Cloud Endpoints
+* Google Maps Javascript API
+* Google Maps Geocoding API
+* Twitter Streaming API
+* Twitter UI Widget Thingie
+* OAuth2
+
+And, somewhat less interestingly
+
+* JUnit
+* Maven
+* Regular expressions that will make you want to self-immolate
+* Google Service API Keys
+* Nifty Javascript animations
+* Web Storage
+* Google Cloud Datastore (using Objectify)
+* (coming soon: some documentation on how to front this kind of GAE project 
+  with cheap domain names and SSL certs)
+
+Sadly, due to the number of integrations here, this is not the type of project
+that one can simply check out, build, and run.  The number of third party APIs
+with their respective keys and URLs makes this virtually impossible.  I have
+tried to be as didactic as possible so the project can be a resource to others
+who may wish to do similar integrations.
 
 ![screenshot](https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/00-screenshot.png)
 
@@ -17,6 +68,7 @@ What you will need:
 1. Maven > 3.2
 
 Optionally:
+
 1. Eclipse
 1. A domain name (with SSL Certificates)
 
