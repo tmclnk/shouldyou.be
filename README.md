@@ -1,4 +1,4 @@
-# shouldyou.be/worried
+# Should You Be Worried?
 
 A mashup for neurotic residents of Omaha, Nebraska, as seen through 
 twitter and a bunch of geographic APIs and regular expressions.
@@ -30,6 +30,7 @@ Demonstrates usage of the following APIs, platforms, etc.
 * Java 1.7
 * Google App Engine
 * Google Cloud Endpoints
+* Google Cloud Datastore (w/Objectify) 
 * Google Maps Javascript API
 * Google Maps Geocoding API
 * Twitter Streaming API
@@ -44,7 +45,6 @@ And, somewhat less interestingly
 * Google Service API Keys
 * Nifty Javascript animations
 * Web Storage
-* Google Cloud Datastore (using Objectify)
 * (coming soon: some documentation on how to front this kind of GAE project 
   with cheap domain names and SSL certs)
 
