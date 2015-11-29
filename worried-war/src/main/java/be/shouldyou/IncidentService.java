@@ -69,8 +69,9 @@ public class IncidentService {
 	@ApiMethod(name = "ping", scopes = { API_EMAIL_SCOPE }, clientIds = {
 			API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
 	public PingResponse ping(User user, HttpServletRequest request) {
-		if(user != null) {
-			log.debug("Ping from {} {}", user.getEmail(), request.getRemoteAddr());
+		if (user != null) {
+			log.debug("Ping from {} {}", user.getEmail(),
+					request.getRemoteAddr());
 		} else {
 			log.debug("Anonymous ping from {}", request.getRemoteAddr());
 		}
@@ -94,10 +95,7 @@ public class IncidentService {
 			API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
 	public void removeTweet(@Named("tweetId") Long tweetId, User user)
 			throws OAuthRequestException {
-		if (user == null) {
-			throw new OAuthRequestException(
-					"Hmm.  Invalid or missing OAuth2 credentials.");
-		}
+		checkUser(user);
 
 		ofy().delete().type(Incident.class).id(tweetId).now();
 	}
@@ -115,13 +113,10 @@ public class IncidentService {
 	 * @throws OAuthRequestException
 	 * @throws TwitterException
 	 */
-	@ApiMethod(name = "insertIncident", scopes = { API_EMAIL_SCOPE }, clientIds = { SERVICE_CLIENT_ID })
+	@ApiMethod(name = "insertIncident", scopes = { API_EMAIL_SCOPE }, clientIds = { API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
 	public Incident insertIncident(Incident incident, User user)
 			throws IOException, OAuthRequestException, TwitterException {
-		if (user == null) {
-			throw new OAuthRequestException(
-					"Invalid or missing OAuth2 credentials.");
-		}
+		checkUser(user);
 
 		// DO SOME QUICK VALIDATION
 		if (incident.id != null) {
@@ -181,14 +176,11 @@ public class IncidentService {
 		return incident;
 	}
 
-	@ApiMethod(name = "primeStatuses", scopes = { API_EMAIL_SCOPE }, clientIds = { SERVICE_CLIENT_ID })
+	@ApiMethod(name = "primeStatuses", scopes = { API_EMAIL_SCOPE }, clientIds = { API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
 	public void primeStatuses(@Named("screenNames") String[] screenNames,
 			@Named("count") int count, User user) throws TwitterException,
 			IOException, OAuthRequestException {
-		if (user == null) {
-			throw new OAuthRequestException(
-					"Invalid or missint OAuth2 credentials.");
-		}
+		checkUser(user);
 
 		if (count > 500) {
 			throw new IllegalArgumentException("No more than 500 allowed");
@@ -201,6 +193,23 @@ public class IncidentService {
 				Incident incident = new Incident(status);
 				this.insertIncident(incident, user);
 			}
+		}
+	}
+
+	/**
+	 * Throw an exception if not a valid user. We will consider
+	 * example@example.com to be a valid user.
+	 * 
+	 * @param user
+	 * @throws OAuthRequestException
+	 */
+	private void checkUser(User user) throws OAuthRequestException {
+		if (user == null) {
+			throw new OAuthRequestException(
+					"Missing OAuth2 credentials.");
+		} else if (!user.getEmail().equals("example@example.com")) {
+			throw new OAuthRequestException(String.format(
+					"OAuth credentials for %s are not valid.", user.getEmail()));
 		}
 	}
 
