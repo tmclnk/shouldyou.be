@@ -13,5 +13,4 @@ public class Constants {
 	 * Android stub of the application.
 	 */
 	public static final String SERVICE_CLIENT_ID = "106588608302127580477";
-//    public static final String EMAIL_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
 }
