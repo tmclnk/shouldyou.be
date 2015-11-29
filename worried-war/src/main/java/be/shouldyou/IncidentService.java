@@ -6,6 +6,8 @@ import static com.google.api.server.spi.Constant.API_EMAIL_SCOPE;
 import static com.google.api.server.spi.Constant.API_EXPLORER_CLIENT_ID;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -61,19 +63,20 @@ public class IncidentService {
 
 		this.gson = gsonBuilder.create();
 	}
-
+	
 	@ApiMethod(name = "ping", scopes = { API_EMAIL_SCOPE }, clientIds = {
 			API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
 	public PingResponse ping(User user, HttpServletRequest request) {
+		final PingResponse resp = new PingResponse(user);
 		if (user != null) {
-			log.debug("Ping from {} {}", user.getEmail(),
-					request.getRemoteAddr());
+			log.debug("Ping from {} {}", user.getEmail(), request.getRemoteAddr());
+			resp.setGeocoderApiStatus(Geocoder.test());
 		} else {
 			log.debug("Anonymous ping from {}", request.getRemoteAddr());
 		}
-		final PingResponse resp = new PingResponse(user);
 		return resp;
 	}
+
 
 	// @ApiMethod(name = "clearAll")
 	// public void clearAll() {

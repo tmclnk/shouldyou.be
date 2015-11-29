@@ -8,7 +8,7 @@
 	
 	<system-properties>
 		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
-		<property name="geocodingapikey" value="${geocodingapikey}" />
+		<property name="server.apikey" value="${server.apikey}" />
 	</system-properties>
 
 
