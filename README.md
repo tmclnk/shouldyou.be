@@ -1,9 +1,11 @@
 # shouldyou.be/worried
 
-https://shouldyou.be/worried/ ?
-
 A mashup for neurotic residents of Omaha, Nebraska, as seen through 
 twitter and a bunch of geographic APIs and regular expressions.
+
+Live demo at https://shouldyou.be/worried/
+
+![screenshot](https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/00-screenshot.png)
 
 If you've ever wondered why there are lights and sirens screaming
 through the neighborhood or why the "ghetto copter" is hovering above,
@@ -52,7 +54,6 @@ with their respective keys and URLs makes this virtually impossible.  I have
 tried to be as didactic as possible so the project can be a resource to others
 who may wish to do similar integrations.
 
-![screenshot](https://raw.githubusercontent.com/tmcoma/shouldyou.be/master/docs/images/00-screenshot.png)
 
 ## Setup Overview 
 This section should give you some idea of how to get started with a similar project on your own.  I can only speak from my own experience, this is not meant to be an authoritative guide.
