@@ -19,10 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import twitter4j.Paging;
-import twitter4j.Status;
-import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
 import be.shouldyou.geocode.AddressExtractor;
 import be.shouldyou.geocode.Geocoder;
 import be.shouldyou.geocode.json.Location;
@@ -87,7 +83,7 @@ public class IncidentService {
 	// }
 
 	@ApiMethod(name = "getIncidents")
-	public List<Incident> getIncidents() throws TwitterException, IOException {
+	public List<Incident> getIncidents() throws IOException {
 		return ofy().load().type(Incident.class).limit(100).list();
 	}
 
@@ -111,11 +107,10 @@ public class IncidentService {
 	 * @return a (geocoded) copy of the incident if it was accepted, or null if
 	 *         it was rejected for some reason
 	 * @throws OAuthRequestException
-	 * @throws TwitterException
 	 */
 	@ApiMethod(name = "insertIncident", scopes = { API_EMAIL_SCOPE }, clientIds = { API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
 	public Incident insertIncident(Incident incident, User user)
-			throws IOException, OAuthRequestException, TwitterException {
+			throws IOException, OAuthRequestException {
 		checkUser(user);
 
 		// DO SOME QUICK VALIDATION
@@ -176,25 +171,25 @@ public class IncidentService {
 		return incident;
 	}
 
-	@ApiMethod(name = "primeStatuses", scopes = { API_EMAIL_SCOPE }, clientIds = { API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
-	public void primeStatuses(@Named("screenNames") String[] screenNames,
-			@Named("count") int count, User user) throws TwitterException,
-			IOException, OAuthRequestException {
-		checkUser(user);
-
-		if (count > 500) {
-			throw new IllegalArgumentException("No more than 500 allowed");
-		}
-
-		for (String screenName : screenNames) {
-			for (Status status : TwitterFactory.getSingleton().getUserTimeline(
-					screenName, new Paging(1, count))) {
-				log.debug("Priming tweet {}", status.getId());
-				Incident incident = new Incident(status);
-				this.insertIncident(incident, user);
-			}
-		}
-	}
+//	@ApiMethod(name = "primeStatuses", scopes = { API_EMAIL_SCOPE }, clientIds = { API_EXPLORER_CLIENT_ID, SERVICE_CLIENT_ID })
+//	public void primeStatuses(@Named("screenNames") String[] screenNames,
+//			@Named("count") int count, User user) throws TwitterException,
+//			IOException, OAuthRequestException {
+//		checkUser(user);
+//
+//		if (count > 500) {
+//			throw new IllegalArgumentException("No more than 500 allowed");
+//		}
+//
+//		for (String screenName : screenNames) {
+//			for (Status status : TwitterFactory.getSingleton().getUserTimeline(
+//					screenName, new Paging(1, count))) {
+//				log.debug("Priming tweet {}", status.getId());
+//				Incident incident = new Incident(status);
+//				this.insertIncident(incident, user);
+//			}
+//		}
+//	}
 
 	/**
 	 * Throw an exception if not a valid user. We will consider

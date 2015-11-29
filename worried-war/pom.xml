@@ -51,6 +51,7 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
+        <!-- TODO Get the twitter dependency out of here! -->
         <dependency>
 			<groupId>com.twitter</groupId>
 			<artifactId>hbc-twitter4j</artifactId>
