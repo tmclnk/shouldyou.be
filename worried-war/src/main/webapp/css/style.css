@@ -1,0 +1,107 @@
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 0px;
+}
+
+.fullscreen {
+    display: block;
+    height: 100%;
+    /*margin: 100px 100px 100px 100px;*/
+    /*padding: 100px 100px 100px 100px;*/
+}
+
+.tweet-stream-sidebar {
+    position: absolute;
+    height: calc(100% - 70px);
+    z-index: 100;
+    background: red;
+    overflow: auto; /* Optionally you can also use overflow: scroll; */
+    overflow-x: hidden;
+}
+
+#map-canvas {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+/* map-icon styles */ 
+.marker-label, .marker-icon {
+    z-index: 99;
+    position: absolute;
+    display: block;
+    margin-top: -50px;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px !important;
+    text-align: center;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.slide-panel {
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+    background: #333333;
+    z-index: 100;
+}
+
+@media (min-width: 300px){
+    .panel-width {
+        width: 250px;
+        margin-left: -250px;
+    }
+}
+
+@media (min-width: 1024px) {
+   .panel-width {
+        width: 400px;
+        margin-left: -400px;
+   }
+}
+
+#slider-button {
+    float: right;
+    margin: -10px -50px 0px 0px;
+    border-radius: 0;
+    z-index:1000;
+}
+
+#slider-button span.active {
+    -webkit-animation-name: rotate180;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+#slider-button span.inactive {
+    -webkit-animation-name: rotateNeg180;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: backwards;
+}
+
+
+@-webkit-keyframes rotateNeg180 {
+    from {
+        -webkit-transform: rotate(180deg);  
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes rotate180 {
+    from {
+        -webkit-transform: rotate(0deg);    
+    }
+    to {
+        -webkit-transform: rotate(180deg);
+    }
+}
