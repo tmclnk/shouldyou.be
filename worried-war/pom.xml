@@ -154,6 +154,8 @@
 				<configuration>
 					<enableJarClasses>false</enableJarClasses>
 					<version>${app.version}</version>
+					<!-- 0.0.0.0 to listen to all requests from the local network -->
+					<address>0.0.0.0</address>
 				</configuration>
 				<executions>
 					<execution>
