@@ -3,12 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>be.shouldyou</groupId>
-	<artifactId>site</artifactId>
+	<artifactId>worried</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>shouldyou.be Google App Engine Mashups</name>
 	<modules>
-		<module>worried-war</module>
+		<module>war</module>
+		<module>client</module>
 	</modules>
 	<build>
 		<defaultGoal>clean install</defaultGoal>

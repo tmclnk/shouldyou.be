@@ -6,11 +6,11 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 
-	<artifactId>worried-war</artifactId>
+	<artifactId>war</artifactId>
 
 	<parent>
 		<groupId>be.shouldyou</groupId>
-		<artifactId>site</artifactId>
+		<artifactId>worried</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
