@@ -1,7 +1,7 @@
 /* jshint laxbreak:true */
 //ROOT = window.location.href.split('/').slice(0, 3).join('/') + '/_ah/api';
-//ROOT='https://shouldibeworrying.appspot.com/_ah/api';
-ROOT='//localhost:8080/_ah/api';
+ROOT='//shouldyoube-worried.appspot.com/_ah/api';
+//ROOT='//localhost:8080/_ah/api';
 var theList = [];
 var map;
 var markers = [];
