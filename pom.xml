@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>be.shouldyou</groupId>
 	<artifactId>worried</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>shouldyou.be Google App Engine Mashups</name>
 	<modules>
@@ -15,6 +15,8 @@
 		<defaultGoal>clean install</defaultGoal>
 	</build>
 	<properties>
+		<app.id>shouldyoube-worried</app.id>
+		<app.version>1</app.version>
 		<appengine.version>1.9.28</appengine.version>
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<gcloud.plugin.version>2.0.9.74.v20150814</gcloud.plugin.version>

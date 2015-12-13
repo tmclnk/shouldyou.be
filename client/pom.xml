@@ -6,8 +6,12 @@
 	<parent>
 		<groupId>be.shouldyou</groupId>
 		<artifactId>worried</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
+
+	<properties>
+		<exec.mainClass>sibw.stream.twitter.SampleTwitterConsumer</exec.mainClass>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -36,7 +40,7 @@
 		<dependency>
 			<groupId>sibw</groupId>
 			<artifactId>sibw</artifactId>
-			<version>v2-1.19.0-SNAPSHOT</version>
+			<version>v2-1.21.0-SNAPSHOT</version>
 		</dependency>
 
 		<!-- Test Dependencies -->

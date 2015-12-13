@@ -203,10 +203,9 @@ public class IncidentService {
 		if (user == null) {
 			throw new OAuthRequestException(
 					"Missing OAuth2 credentials.");
-		} else if (!user.getEmail().equals("example@example.com")) {
-			throw new OAuthRequestException(String.format(
-					"OAuth credentials for %s are not valid.", user.getEmail()));
-		}
+		} 
+		
+		log.info(user.toString());
 	}
 
 	/**

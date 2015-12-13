@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://appengine.google.com/ns/1.0 appengine-web.xsd ">
 	<application>${app.id}</application>
-	<version>1</version>
+	<version>${app.version}</version>
 	<threadsafe>true</threadsafe>
 	
 	<system-properties>

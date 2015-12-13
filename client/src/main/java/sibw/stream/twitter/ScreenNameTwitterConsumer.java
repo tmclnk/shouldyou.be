@@ -63,6 +63,8 @@ public class ScreenNameTwitterConsumer {
         }
 
         final Sibw service = ServiceFactory.getInstance(rootUrl, p12path);
+        
+        log.info(service.ping().execute().toPrettyString());
 
         // build a stream handler for twitter
         StatusListener listener = new AbstractStatusListener() {

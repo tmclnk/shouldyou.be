@@ -56,9 +56,7 @@ who may wish to do similar integrations.
 
 
 ## Setup Overview 
-This section should give you some idea of how to get started with a similar project on your own.  I can only speak from my own experience, this is not meant to be an authoritative guide.
 
-What you will need:
 
 1. [A Google App Engine Project](https://console.developers.google.com)
     - Google Maps Javascript API Key

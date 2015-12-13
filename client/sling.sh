@@ -9,5 +9,5 @@
 #		@FireRescueOmaha https://shouldibeworrying.appspot.com/_ah/api \
 #		@PartyTurkey @DCNE911 >> log &
 #
-java -jar target/worried-jar-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./service.p12 $@ 
+java -jar  target/client-1.0.0-SNAPSHOT-jar-with-dependencies.jar ./service.p12 $@ 
 

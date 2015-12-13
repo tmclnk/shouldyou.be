@@ -32,7 +32,7 @@ public class SampleTwitterConsumer {
 
     public static void main(String[] args) throws IOException {
         // SET UP THE SERVICE
-        final Sibw service = ServiceFactory.getInstance("http://localhost:8080/_ah/api", "worry.p12");
+        final Sibw service = ServiceFactory.getInstance("http://localhost:8080/_ah/api", "service.p12");
 
         // SET UP TWITTER STREAMING
         final TwitterStream twitterStream = new TwitterStreamFactory().getInstance();
