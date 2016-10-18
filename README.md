@@ -1,3 +1,6 @@
+# Hi OJUG!
+Slide deck is on prezi at http://prezi.com/0oyzn-ralb-q/?utm_campaign=share&utm_medium=copy
+
 # Should You Be Worried?
 
 A mashup for neurotic residents of Omaha, Nebraska, as seen through 
@@ -102,5 +105,5 @@ Our project will have a server component (the part hosted on GAE) and a client c
 ####  Configure API Keys
 Follow the instructions in keys.properties for obtaining API keys.
 
-#### Client
+
 
